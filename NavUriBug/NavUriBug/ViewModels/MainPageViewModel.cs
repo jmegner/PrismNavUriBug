@@ -14,6 +14,14 @@ namespace NavUriBug.ViewModels
             : base(navigationService)
         {
             Title = "Main Page";
+            NavigateCommand = new DelegateCommand<string>(OnNavigateCommandExecuted);
+        }
+
+        public DelegateCommand<string> NavigateCommand { get; }
+
+        private async void OnNavigateCommandExecuted(string path)
+        {
+            await NavigationService.NavigateAsync(path, useModalNavigation: false);
         }
     }
 }
