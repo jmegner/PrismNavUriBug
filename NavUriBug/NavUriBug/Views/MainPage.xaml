@@ -4,7 +4,7 @@
              x:Class="NavUriBug.Views.MainPage"
              Title="{Binding Title}">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
         <Button Text="Nav to A" Command="{Binding NavigateCommand}" CommandParameter="ViewA?message=RelativeNavFromMain" />
         <!--
         <Button Text="Nav to /N/M/A" Command="{Binding NavigateCommand}" CommandParameter="/NavigationPage/MainPage/ViewA?message=AbsoluteNavFromMain" />
