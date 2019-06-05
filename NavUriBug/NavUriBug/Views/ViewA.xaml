@@ -7,6 +7,8 @@
     x:Class="NavUriBug.Views.ViewA">
     <StackLayout BackgroundColor="BlanchedAlmond">
         <Label Text="{Binding Message}" />
-        <Label Text="{Binding NavPath}" />
+        <Label Text="{Binding NavPath1}" />
+        <Button Text="Update Below" Command="{Binding UpdateCommand}" />
+        <Label Text="{Binding NavPath2}" />
     </StackLayout>
 </ContentPage>

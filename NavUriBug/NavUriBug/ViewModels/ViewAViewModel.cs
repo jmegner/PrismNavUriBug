@@ -10,6 +10,14 @@ namespace NavUriBug.ViewModels
             : base(navigationService)
         {
             Title = "View A";
+            UpdateCommand = new DelegateCommand(OnUpdateCommandExecuted);
+        }
+
+        public DelegateCommand UpdateCommand { get; }
+
+        private void OnUpdateCommandExecuted()
+        {
+            NavPath2 = NavigationService.GetNavigationUriPath();
         }
 
         private string _message;
@@ -19,17 +27,24 @@ namespace NavUriBug.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        private string _navPath;
-        public string NavPath
+        private string _navPath1;
+        public string NavPath1
         {
-            get { return _navPath; }
-            set { SetProperty(ref _navPath, value); }
+            get { return _navPath1; }
+            set { SetProperty(ref _navPath1, value); }
+        }
+
+        private string _navPath2;
+        public string NavPath2
+        {
+            get { return _navPath2; }
+            set { SetProperty(ref _navPath2, value); }
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             Message = parameters.GetValue<string>("message");
-            NavPath = NavigationService.GetNavigationUriPath();
+            NavPath1 = NavigationService.GetNavigationUriPath();
         }
     }
 }
